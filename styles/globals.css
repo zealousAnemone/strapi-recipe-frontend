@@ -17,11 +17,28 @@ a {
 
 #recipe-container {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .recipe-card {
   border-radius: 10px;
-  background: red;
   border: 2px solid #222;
+  box-shadow: -2px 2px 2px #333;
   padding: 20px;
+  flex-basis: 30%;
+}
+
+.header {
+  box-shadow: -2px 2px 2px #222;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.type {
+  border-radius: 5px;
+  border: 2px solid #222;
+  padding: 8px 4px;
+  box-shadow: -1px 1px 1px #222;
 }

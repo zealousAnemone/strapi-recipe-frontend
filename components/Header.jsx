@@ -1,11 +1,12 @@
-const Header = () => {
+const Header = ({types}) => {
+  console.log("Types: ", types)
   return (
-    <div>
+    <div className="header">
       <p>Strapi Recipe Book</p>
       <ul>
-        <li>
-          
-        </li>
+      {types.map((type) => (
+        <li>{type.type}</li>
+      ))}
       </ul>
     </div>
   )
