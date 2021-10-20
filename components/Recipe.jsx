@@ -8,7 +8,7 @@ const Recipe = ({recipe}) => {
 return (
   <div className='recipe-card'>
     <a href={recipe.link}><h3>{recipe.name}</h3></a>
-    <img src="#"></img>
+    <img src={`http://localhost:1337${recipe.photo[0].url}`} alt={recipe.name} className="recipe-image" />
     <div dangerouslySetInnerHTML={getMarkdownText(recipe.ingredients)}></div>
     <div dangerouslySetInnerHTML={getMarkdownText(recipe.instructions)}></div>
 

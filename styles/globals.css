@@ -42,3 +42,7 @@ a {
   padding: 8px 4px;
   box-shadow: -1px 1px 1px #222;
 }
+
+.recipe-image {
+  width: 100%;
+}
