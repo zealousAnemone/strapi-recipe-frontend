@@ -1,19 +1,20 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Recipe from '../components/Recipe';
-import styles from '../styles/Home.module.css';
 
 export default function Home({ recipes }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Recipe Book</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      {recipes.map((recipe) => (
-        <Recipe recipe={recipe} />
-      ))}
+      <div id="recipe-container">
+        {recipes.map((recipe) => (
+          <Recipe recipe={recipe} />
+        ))}
+      </div>
     </div>
   );
 }
