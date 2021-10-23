@@ -1,4 +1,5 @@
 import marked from 'marked';
+import Link from 'next/link';
 
 const fullRecipe = ({ recipe }) => {
   const getMarkdownText = (text) => {
@@ -6,16 +7,20 @@ const fullRecipe = ({ recipe }) => {
     return { __html: formattedText };
   };
   return (
-    <div>
+    <div className="full-recipe">
       <h1>{recipe.name}</h1>
       <img
-        src={`http://localhost:1337${recipe.photo[0].url}`}
+        src={`http://localhost:1337${recipe.photo.url}`}
         alt={recipe.name}
         width={400}
       />
-
+      <h3>Ingredients</h3>
       <div dangerouslySetInnerHTML={getMarkdownText(recipe.ingredients)}></div>
+      <h3>Instructions</h3>
       <div dangerouslySetInnerHTML={getMarkdownText(recipe.instructions)}></div>
+      <Link href="/">
+        <button className="home">Home</button>
+      </Link>
     </div>
   );
 };

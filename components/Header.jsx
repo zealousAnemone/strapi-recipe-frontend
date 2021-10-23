@@ -1,15 +1,14 @@
-const Header = ({types}) => {
-  console.log("Types: ", types)
+export default function Header({setFilter, categories}) {
+
   return (
     <div className="header">
-      <p>Strapi Recipe Book</p>
+      <h3>Strapi Recipe Book</h3>
       <ul>
-      {types.map((type) => (
-        <li>{type.type}</li>
+        <li className="type" onClick={() => {setFilter(null)}}>All recipes</li>
+      {categories.map((category) => (
+        <li className="type" onClick={() => {setFilter(category.category)}}>{category.category}</li>
       ))}
       </ul>
     </div>
   )
 }
-
-export default Header;
